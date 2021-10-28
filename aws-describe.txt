@@ -1,0 +1,27 @@
+1. aws ec2 describe-instances \
+    --filters Name=instance-type,Values=m5.large
+
+
+2. aws ec2 describe-instances \
+    --filters Name=instance-type,Values=t2.micro
+
+
+3.  aws ec2 describe-images \
+     --filters "Name=description,Values=Amazon Linux AMI" \
+     --query 'Images[*].[ImageId]' --output text
+
+4. aws ec2 describe-images \
+    --filters "Name=description,Values=Amazon Linux AMI * x86_64 HVM GP2" \
+    --query 'images[*].[CreationDate, Description, ImageId]' --output text | sort -k 1 | tail
+
+
+4. aws ec2 describe-images \
+    --filters "Name=description,Values=Amazon Linux AMI * x86_64" \
+    --query 'images[*].[CreationDate, Description, ImageId]' --output text
+
+
+5.  aws ec2 describe-images \
+    --owners amazon \
+    --filters "Name=name,Values=amzn*gp2" "Name=virtualization-type,Values=hvm" "Name=root-device-type,Values=ebs" \
+    --query "sort_by(Images, &CreationDate)[-1].ImageId" \
+    --output text
