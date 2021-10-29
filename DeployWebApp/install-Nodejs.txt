@@ -1,0 +1,11 @@
+#Extra Packages for Enterprise Linux (EPEL) - Red Hat Enterprise Linux (RHEL)
+sudo yum install --enablerepo=epel -y nodejs
+
+#error
+#Error getting repository data for epel, repository not found
+# solution AMAZON LINUX IMAGE 2
+sudo amazon-linux-extras install epel -y
+sudo yum repolist
+
+#https://aws.amazon.com/premiumsupport/knowledge-center/ec2-enable-epel/
+#https://forum.centos-webpanel.com/index.php?topic=8203.0

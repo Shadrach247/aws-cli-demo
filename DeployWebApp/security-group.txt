@@ -1,7 +1,7 @@
 aws ec2 create-security-group \
   --group-name HelloWorld \
   --description "Hello World Demo" \
-  --vpc-id vpc-8f530be7
+  --vpc-id [ Enter VPC-ID Here ]
 
 
 # Open SSH(tcp/22) and tcp/3000

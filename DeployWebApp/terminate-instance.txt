@@ -1,0 +1,10 @@
+#Exit virtual server and terminate instance
+ec2-metadata \
+  --instance-id instance-id: [ Enter InstanceID Here ]
+
+#Exit
+Exit
+
+#terminate
+aws ec2 terminate-instances \
+  --instance-ids [ Enter InstanceID Here ]

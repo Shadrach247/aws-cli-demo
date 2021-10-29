@@ -1,0 +1,10 @@
+# Launching an EC2 instance
+aws ec2 run-instances \
+  --instance-type t2.micro \
+  --key-name DevOps \
+  --security-group-ids [ sg- Add your unique ID Here ] \
+  --image-id [ ami- Add your unique ID Here ]
+
+# check status
+aws ec2 describe-instance-status \
+  --instance-ids [ Enter InstanceID Here ]

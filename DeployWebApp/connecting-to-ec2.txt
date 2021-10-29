@@ -1,0 +1,14 @@
+# find DNS name to connect via SSH
+aws ec2 describe-instances \
+  --instance-ids [ Enter InstanceID Here ] \
+  --query "Reservations[*].Instances[*].PublicDnsName"
+
+# example-2
+aws ec2 describe-instances \
+    --instance-ids [ Enter InstanceID Here ]
+
+# USER
+ec2-user:
+
+#SSH with PublicDnsName example
+ssh -i ~/.ssh/Example.pem ec2-user@ec2-11-133-189-123.eu-west-2.compute.amazonaws.com

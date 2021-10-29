@@ -1,31 +1,26 @@
 # create key pair
-aws ec2 create-key-pair \
-  --key-name EffectiveDevOpsAWS \
-  --query "KeyMaterial" \
-  --output text > ~/.ssh/EffectiveDevOpsAWS.pem
 
-
-# example-2 - create key pair
+# example - create key pair
 aws ec2 create-key-pair \
-    --key-name DevOps \
+    --key-name Example \
     --query "KeyMaterial" \
-    --output text > ~/.ssh/DevOps.pem
+    --output text > ~/.ssh/Example.pem
 
 # example-3 create key pair
 aws ec2 create-key-pair \
   --key-name MyKeyPair \
   --query 'KeyMaterial' \
-  --output text > MyKeyPair.pem
+  --output text > ~/.ssh/MyKeyPair.pem
 
 # describe key-pair
 aws ec2 describe-key-pairs \
-  --key-name DevOps
+  --key-name Example
 
 # cat key-pair
-cat ~/.ssh/DevOps.pem
+cat ~/.ssh/Example.pem
 
 # set permission
-chmod 400 ~/.ssh/DevOps.pem
+chmod 400 ~/.ssh/Example.pem
 
 #To delete a key pair
 aws ec2 delete-key-pair --key-name MyKeyPair
